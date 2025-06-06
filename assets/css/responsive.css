@@ -1,0 +1,39 @@
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 0.5rem;
+    position: relative;
+  }
+  .navbar__logo {
+    margin: auto;
+    padding: 0;
+  }
+  .navbar-detail__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .search {
+    max-width: none;
+    margin: 1rem 2rem 0 2rem;
+  }
+  .row {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+  .movie-card__container {
+    width: 100%;
+  }
+  .movie {
+    flex-direction: column;
+    padding: 0;
+  }
+  .movie__info {
+    margin-left: 0;
+    padding: 0 1rem;
+  }
+  .movie__poster img {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */
