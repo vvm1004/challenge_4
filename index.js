@@ -18,18 +18,37 @@ const searchButton = document.querySelector('.search__button');
 let isLoading = false; // trạng thái loading
 let isSearching = false; // trạng thái đang search (khác với load auto)
 
+function createSkeletonCard() {
+  return `
+    <div class="movie-card__container skeleton">
+      <div class="skeleton__poster"></div>
+      <div class="skeleton__text" style="width: 80%;"></div>
+      <div class="skeleton__text" style="width: 50%;"></div>
+    </div>
+  `;
+}
+
 async function fetchAndRenderMovies(keyword, isNewSearch = false) {
-  if (!keyword) {
-    return;
+  if (!keyword) return;
+
+  if (isNewSearch) root.innerHTML = '';
+
+  // Hiển thị skeleton loading
+  const skeletonRow = document.createElement('div');
+  skeletonRow.classList.add('row');
+  for (let i = 0; i < 4; i++) {
+    skeletonRow.innerHTML += createSkeletonCard();
   }
+  root.appendChild(skeletonRow);
+
   const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(keyword)}`;
 
   try {
-    if (isNewSearch) {
-      root.innerHTML = ''; // Xóa hết phim hiện tại khi search mới
-    }
     const response = await fetch(apiUrl);
     const data = await response.json();
+
+    // Xóa skeleton
+    skeletonRow.remove();
 
     if (data.Response === "True") {
       data.Search.forEach((movie) => {
@@ -70,7 +89,6 @@ async function fetchAndRenderMovies(keyword, isNewSearch = false) {
       if (isNewSearch) {
         root.innerHTML = `<p style="color: white; padding: 1rem;">Không tìm thấy phim với từ khóa: "${keyword}"</p>`;
       }
-      console.warn('Không tìm thấy phim với từ khóa:', keyword);
     }
   } catch (error) {
     console.error('Lỗi khi gọi API:', error);
@@ -131,7 +149,7 @@ searchInput.addEventListener('keydown', (e) => {
 window.addEventListener('DOMContentLoaded', startAutoFetch);
 
 document.querySelector('.navbar__logo').addEventListener('click', () => {
-  window.location.href = 'index.html'; 
+  window.location.href = 'index.html';
 });
 
 root.addEventListener('click', (e) => {

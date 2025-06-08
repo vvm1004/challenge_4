@@ -57,14 +57,28 @@ function createMovieHTML(data) {
     <hr class="movie__divider" />
     
     <div class="movie__details">
-      <p><strong>Genre :</strong> ${data.Genre}</p>
-      <p><strong>Director :</strong> ${data.Director}</p>
-      <p><strong>Writer :</strong> ${data.Writer}</p>
-      <p><strong>Actors :</strong> ${data.Actors}</p>
-      <p><strong>Language :</strong> ${data.Language}</p>
-      <p><strong>Country :</strong> ${data.Country}</p>
-      <p><strong>Awards :</strong> ${data.Awards}</p>
-      <p><strong>Production :</strong> ${data.Production}</p>
+      <div class="movie__detai-key">
+        <p><strong>Genre :</strong></p>
+        <p><strong>Director :</strong></p>
+        <p><strong>Writer :</strong></p>
+        <p><strong>Actors :</strong></p>
+        <p><strong>Language :</strong></p>
+        <p><strong>Country :</strong></p>
+        <p><strong>Awards :</strong></p>
+        <p><strong>Production :</strong></p>
+      </div>
+
+      <div class="movie__detai-value">
+        <p>${data.Genre}</p>
+        <p>${data.Director}</p>
+        <p>${data.Writer}</p>
+        <p>${data.Actors}</p>
+        <p>${data.Language}</p>
+        <p>${data.Country}</p>
+        <p>${data.Awards}</p>
+        <p>${data.Production}</p>
+      </div>
+
     </div>
   `;
 
@@ -73,10 +87,9 @@ function createMovieHTML(data) {
 }
 
 document.querySelector('.navbar__logo').addEventListener('click', () => {
-    window.location.href = 'index.html'; 
-  });
+  window.location.href = 'index.html';
+});
 
-  document.querySelector('.navbar__arrow').addEventListener('click', () => {
-    window.location.href = 'index.html'; 
-  });
-  
+document.querySelector('.navbar__arrow').addEventListener('click', () => {
+  window.location.href = 'index.html';
+});
