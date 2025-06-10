@@ -1,15 +1,54 @@
 const apiKey = 'c16ee967';
 const keywords = [
-  'man', 'woman', 'love', 'dark', 'light', 'city', 'night', 'day', 'fire', 'war',
-  'ghost', 'dream', 'truth', 'game', 'power', 'world', 'secret', 'fear', 'hope', 'storm',
-  'angel', 'devil', 'monster', 'hero', 'legend', 'destiny', 'hunter', 'alien', 'robot', 'revenge',
-  'future', 'past', 'life', 'death', 'battle', 'code', 'killer', 'spy', 'crime', 'magic',
-  'detective', 'prison', 'escape', 'fight', 'army', 'planet', 'zombie', 'vampire', 'witch', 'curse',
-  'forest', 'river', 'blood', 'sand', 'ice', 'dragon', 'time', 'mirror', 'shadow', 'clown',
-  'child', 'parent', 'king', 'queen', 'soldier', 'space', 'mission', 'alien', 'trap', 'treasure',
-  'voice', 'signal', 'ring', 'island', 'virus', 'doctor', 'nurse', 'patient', 'storm', 'road',
-  'train', 'plane', 'hotel', 'beach', 'mountain', 'snow', 'sun', 'moon', 'star', 'music'
+  // Chủ đề con người và quan hệ
+  'man', 'woman', 'child', 'parent', 'family', 'friend', 'enemy', 'lover', 'husband', 'wife',
+
+  // Chủ đề cảm xúc, tâm lý
+  'love', 'hate', 'fear', 'hope', 'dream', 'nightmare', 'truth', 'lie', 'revenge', 'guilt',
+
+  // Chủ đề siêu nhiên & huyền bí
+  'ghost', 'angel', 'devil', 'demon', 'witch', 'vampire', 'zombie', 'monster', 'curse', 'spell',
+
+  // Chủ đề chiến đấu, hành động
+  'war', 'battle', 'fight', 'gun', 'army', 'soldier', 'killer', 'assassin', 'spy', 'ninja',
+
+  // Chủ đề khoa học viễn tưởng
+  'robot', 'alien', 'space', 'planet', 'galaxy', 'universe', 'time', 'future', 'past', 'code',
+
+  // Chủ đề tội phạm, trinh thám
+  'crime', 'detective', 'police', 'prison', 'escape', 'justice', 'murder', 'trial', 'lawyer', 'judge',
+
+  // Chủ đề kỳ ảo
+  'magic', 'dragon', 'sword', 'castle', 'king', 'queen', 'hero', 'legend', 'prophecy', 'destiny',
+
+  // Chủ đề thiên nhiên & địa điểm
+  'forest', 'river', 'ocean', 'mountain', 'desert', 'island', 'volcano', 'storm', 'earthquake', 'ice',
+
+  // Chủ đề đô thị & hiện đại
+  'city', 'night', 'day', 'road', 'train', 'plane', 'hotel', 'beach', 'bar', 'restaurant',
+
+  // Chủ đề y tế & thảm họa
+  'virus', 'doctor', 'nurse', 'patient', 'hospital', 'quarantine', 'vaccine', 'pandemic', 'infection', 'lab',
+
+  // Chủ đề công nghệ & hack
+  'hacker', 'computer', 'AI', 'cyber', 'data', 'network', 'program', 'matrix', 'signal', 'surveillance',
+
+  // Chủ đề tâm linh & triết lý
+  'soul', 'spirit', 'karma', 'afterlife', 'meditation', 'fate', 'faith', 'belief', 'miracle', 'sin',
+
+  // Chủ đề văn hóa & xã hội
+  'music', 'dance', 'art', 'painting', 'film', 'celebrity', 'fashion', 'festival', 'history', 'revolution',
+
+  // Chủ đề phiêu lưu & khám phá
+  'treasure', 'explorer', 'map', 'jungle', 'cave', 'trap', 'adventure', 'mission', 'voyage', 'expedition',
+
+  // Chủ đề thời gian & không gian
+  'clock', 'mirror', 'portal', 'dimension', 'parallel', 'infinity', 'timeline', 'universe', 'blackhole', 'chronicle',
+
+  // Từ khóa tổng hợp thêm
+  'clown', 'shadow', 'mirror', 'ring', 'signal', 'snow', 'sun', 'moon', 'star', 'fire'
 ];
+
 
 const root = document.querySelector('.movie-card');
 const searchInput = document.querySelector('.search__input');
